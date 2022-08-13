@@ -1,0 +1,177 @@
+public class Book
+{
+private int bookid;
+privat string bookName;
+private double bookPrice;
+
+public int Bookid()
+{
+return bookid;
+}
+public void setBookid(int bookid)
+{
+this.bookid=bookid;
+}
+public string getBookName()
+{
+return bookName;
+}
+public void setBookName(String bookName)
+{
+this.bookName = bookName;
+}
+public double getBookPrice()
+{
+return bookPrice;
+}
+public void setBookPrice(double BookPrice)
+{
+this.bookPrice = bookPrice;
+}
+public Book(int bookid,String bookName,double bookPrice)
+{
+super();
+this.bookid = bookid;
+this.bookName = bookName;
+this.bookPrice = bookPrice;
+}
+public Book()
+{
+super();
+}
+@Override
+public String toString()
+{
+return"Book[bookid=" + bookid +",bookName=" + bookName + ",bookPrice=" + bookPrice + "]";
+}
+
+}
+
+
+import java.util.Scanner;
+
+public class BookService
+{
+static Book book[]=new Book[10];
+static Scanner sc=new Scanner(System.in);
+static int index=0;
+
+//creat Book method
+public static void creatBook()
+{
+System.out.println("Enter Bookid:");
+int id=sc.nextint();
+
+sc.nextLine();
+//it will consume the \n character
+
+System.out.println("Enter Bookname:");
+String bookname=sc.nextLine();
+
+System.out.println("Enter Bookprice:");
+double bookprice=sc.nextDouble();
+
+book[index]=new Book(id bname bprice);
+index++; //1 2
+System.out.println("Book details created successfilly");
+}
+
+//get all book details
+public static void getAllBookDetails()
+{
+for(int i=0;i<index;i++)
+{
+System.out.println("Book id:"+ book[i].getBookid());
+System.out.println("Book Name:"+ book[i].getBookName());
+System.out.println("Book price:"+ book[i].getBookprice());
+ }
+}
+
+//get book details based on id
+public static void getBookByid()
+{
+boolean f=false;
+System.out.println("Enter id");
+int id=sc.Nextint();
+for(int i=0;i<index;i++)
+{
+if(id==book[i].getBookid())
+{
+//     System.out.println("book[i]);
+System.out.println("Book id:"+ book[i].getBookid());
+System.out.println("Book Name:"+ book[i].getBookName());
+System.out.println("Book price:"+ book[i].getBookprice());
+
+System.out.println("=========================================");
+         f=true;
+         break;
+         }
+       }
+    if(f==false)
+System.out.println("Data not found");
+
+
+System.out.println("=========================================");
+   }
+ }
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class BookMain
+{
+public static void main(String[]args)
+{
+int choice;
+Scanner sc=new Scanner(System.in);
+BookService bservice = new BookService();
+
+do
+{
+System.out.println("~~Welcome to Book Manegment System~~");
+
+System.out.println("=========================================");
+
+System.out.println("Press 1.for creat Book details\nPress" + "2.for get book details by id\npress" + "3.for get all book details\npress" + 4.for quit");
+
+System.out.println("=========================================");
+
+System.out.println("Enter your choise");
+choice=sc.nextint();
+
+switch(choice)
+{
+case 1:
+bservice.creatBook();
+
+
+System.out.println("=========================================");
+
+break;
+
+case 2:
+bservice.getBookByid();
+
+
+System.out.println("=========================================");
+
+break;
+
+case 3:
+bservice.getAllBookDetails();
+
+
+System.out.println("=========================================");
+
+break;
+    }
+  }
+while(choice!=4);
+System.out.println("Thanks for visit");
+    }
+ }
+
