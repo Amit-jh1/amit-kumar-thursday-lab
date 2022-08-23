@@ -1,0 +1,164 @@
+import java.util.Scanner;
+ public class StudenrDetails
+{
+static Student stdjava[]=new Studnt[50];
+static Student stdaws[]=new Studnt[50];
+ static Scanner sc=new Scanner(System.in);
+ static int jindex=0;
+ static int aindex=0;
+
+ //getting java student details
+  public static void javaStudentDetails()
+  {
+   System.out.println("Welcomr to java Course");
+   System.out.println("Enter StudentId:");
+      int id=sc.nextlnt();
+
+   sc.nextLine();//it will consume\n charecter
+ 
+   System.out.println("Enter StudentName:");
+  String name=sc.nextLine();
+
+  System.out.println("Enter StudentMailId:");
+  String mailid=sc.nextLine();
+
+  System.out.println("Enter StudentPhno:");
+  long phnno=sc.nextLine();
+
+  stdjava[jindex]=new student(id,name,mailid,phno);
+       jindex++;
+
+
+  
+  System.out.println("Java Student Details Added Successfully");
+
+ }
+ //getting aws student details
+public static void awsStudentDetails()
+{
+
+  System.out.println("Welcome to Aws Course");
+  System.out.println("Enter StudentId:");
+      int id=sc.nextlnt();
+
+   sc.nextLine();//it will consume\n charecter
+ 
+   System.out.println("Enter StudentName:");
+  String name=sc.nextLine();
+
+  System.out.println("Enter StudentMailId:");
+  String mailid=sc.nextLine();
+
+  System.out.println("Enter StudentPhno:");
+  long phnno=sc.nextLine();
+
+  stdjava[aindex]=new student(id,name,phno);
+       aindex++;
+ System.out.println("Aws Student Details Added Successfully");
+
+ }
+ //getting java student details
+public static void getDetailsJavaStudent()
+{
+  for(int i=0;i<jindex;i++)
+ {
+  {
+   System.out.println("Student Id:"+stdjava[i].getStudentId());
+   System.out.println("Student Name:"+stdjava[i].getStudentName());
+  System.out.println("Student EmailId:"+stdjava[i].getStudentEmailId());
+   System.out.println("Student phno:"+stdjava[i].getStudentphno());
+   System.out.println("============================================");
+      }
+   }
+ }
+  //getting Aws student details
+public static void getDetailsAwsStudent()
+{
+  for(int i=0;i<aindex;i++)
+ {
+  {
+   System.out.println("Student Id:"+stdjava[i].getStudentId());
+   System.out.println("Student Name:"+stdjava[i].getStudentName());
+  System.out.println("Student EmailId:"+stdjava[i].getStudentEmailId());
+   System.out.println("Student phno:"+stdjava[i].getStudentphno());
+   System.out.println("============================================");
+      }
+   }
+ }
+ //update details based on id
+public static void updateJavaStudent()throws StudentIdNotFountException
+{
+boolean status==false;
+System.out.println("Enter Id:");
+int id=sc.nextlnt();
+
+for(int i=0;i<jindex;i++)
+{
+
+if(id==stdjava[i].getStudentId())
+{
+
+System.out.println("Enter StudentId:");
+      int bid=sc.nextlnt();
+ 
+   System.out.println("Enter StudentName:");
+  String name=sc.nextLine();
+
+  System.out.println("Enter StudentMailId:");
+  String mailid=sc.nextLine();
+
+  System.out.println("Enter StudentPhno:");
+  long phnno=sc.nextLine();
+
+  stdjava[i]=new student(bid,sname,mailid,phno);
+       aindex++;
+ System.out.println("Java Student Details has been updated Successfully")
+status=true;
+break;
+ }
+}
+if(status==false)
+{
+throw new
+StudentIdNotFoundException("No Student Id Found in system");
+  }
+ }
+
+ //updating Aws details by book id
+public static void updateAwsStudent()throws StudentIdNotFountException
+{
+boolean status==false;
+System.out.println("Enter Id:");
+int id=sc.nextlnt();
+
+for(int i=0;i<aindex;i++)
+{
+
+if(id==stdaws[i].getStudentId())
+{
+
+System.out.println("Enter StudentId:");
+      int bid=sc.nextlnt();
+ 
+   System.out.println("Enter StudentName:");
+  String name=sc.nextLine();
+
+  System.out.println("Enter StudentMailId:");
+  String mailid=sc.nextLine();
+
+  System.out.println("Enter StudentPhno:");
+  long phnno=sc.nextLine();
+
+  stdaws[i]=new student(bid,sname,mailid,phno);
+
+ System.out.println("Aws Student Details has been updated Successfully")
+status=true;
+break;
+ }
+}
+if(status==false)
+{
+throw new
+StudentIdNotFoundException("No Student Id Found in system");
+  }
+ }
